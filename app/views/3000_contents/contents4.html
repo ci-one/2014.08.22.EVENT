@@ -1,26 +1,22 @@
-<div>
+<div ng-controller="Contents4Ctrl">
+
     <link rel="stylesheet" href="styles/contents.css">
 
     <!-- header -->
-    <div class="navbar-fixed-top sub-navbar header-bottom">
-        <!--<span>현재 참가 등록 {{count? count : 0}}명</span>-->
-        <marquee direction="left" loop="-1">현재 참가 등록 {{count? count : 0}}명</marquee>
-    </div>
 
     <!-- contents -->
     <div class="container-well">
         <div class="well01">
             <div class="row clearfix">
                 <div class="col-xs-12 column">
-                    <div class="tabbable" id="tabs">
-                        <div class="pull-right" ng-if="tabPage=='등록' || tabPage=='수정'">
-                            <button type="button" class="btn btn-danger" ng-click="submit();">{{tabPage}}
-                            </button>
-                        </div>
-
-                        <div">
-                            숙소 배정
-                        </div>
+                    <div  ng-if="menuPage=='개별배정(지방회)'">
+                        <div ng-include="'views/3000_contents/3100_enter/resort_A.html'"></div>
+                    </div>
+                    <div ng-if="menuPage=='객실배정(본부)'">
+                        <div ng-include="'views/3000_contents/3100_enter/resort_B.html'"></div>
+                    </div>
+                    <div ng-if="menuPage=='계약객실(등록)'">
+                        <div ng-include="'views/3000_contents/3100_enter/resort_C.html'"></div>
                     </div>
                 </div>
             </div>
@@ -28,10 +24,14 @@
     </div>
 
     <!-- footer -->
-    <!--<div class="navbar-fixed-bottom sub-navbar footer-top">-->
-        <!--<button type="button" class="btn btn-default btn01" ng-click="clickevent()">컨텐츠2</button>-->
-        <!--<button type="button" class="btn btn-default btn01">업무2</button>-->
-        <!--<button type="button" class="btn btn-default btn01">업무3</button>-->
-        <!--<button type="button" class="btn btn-default btn01">업무4</button>-->
-    <!--</div>-->
+    <div class="navbar-fixed-bottom sub-navbar footer-top">
+        <button type="button" ng-if="menuPage=='개별배정(지방회)'" class="btn btn01" style="background-color: #ff958a" ng-click="chkMenu('개별배정(지방회)')"><div class="small">개별배정(지방회)</div></button>
+        <button type="button" ng-if="menuPage!='개별배정(지방회)'" class="btn  btn01" ng-click="chkMenu('개별배정(지방회)')"><div class="small">개별배정(지방회)</div></button>
+        <button type="button" ng-if="menuPage!='객실배정(본부)'" class="btn  btn01" ng-click="chkMenu('객실배정(본부)')"><div class="small">객실배정(본부)</div></button>
+        <button type="button" ng-if="menuPage=='객실배정(본부)'" class="btn  btn01" style="background-color: #ff958a" ng-click="chkMenu('객실배정(본부)')"><div class="small">객실배정(본부)</div></button>
+        <button type="button" ng-if="menuPage!='계약객실(등록)'" class="btn  btn01" ng-click="chkMenu('계약객실(등록)')"><div class="small">계약객실(등록)</div></button>
+        <button type="button" ng-if="menuPage=='계약객실(등록)'" class="btn  btn01" style="background-color: #ff958a" ng-click="chkMenu('계약객실(등록)')"><div class="small">계약객실(등록)</div></button>
+    </div>
+
 </div>
+

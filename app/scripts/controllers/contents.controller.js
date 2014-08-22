@@ -108,8 +108,13 @@ angular.module('churchApp')
                 default:
                     break;
             }
-
             return tabContainerClass;
         }
+        $scope.subMenuOn = false;
+
+        $scope.$on('subMenuOn',function(event, item){
+            $scope.subMenuOn = true;
+            $scope.menuPage = item;
+        });
     });
 

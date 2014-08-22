@@ -1,0 +1,116 @@
+<link rel="stylesheet" href="styles/contents.css">
+<div class="container" ng-controller="Contents41Ctrl">
+    <div class="row clearfix">
+        <div class="col-xs-12 column">
+            <div class="row clearfix">
+                <div class="col-xs-4 column">
+                    <div class="row clearfix">
+                        <div class="text-box  add-group1">
+                            지방회
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-8 column">
+                    <input class="text-box" type="text" placeholder="클릭하세요" ng-model="inputData.local_name" ng-click="getLocalDt()"/>
+                </div>　
+            </div>
+            <div class="row clearfix">
+                <div>
+                    <table class="col-xs-12 column ">
+                        <thead>
+                        <tr>
+                            <th class="text-center col-xs-4 column text-box add-group1">
+                                참가인원
+                            </th>
+                            <th class="text-center col-xs-2 column text-box">
+                                <input type="text" style="width: 3em;border:none" ng-model="inputData.app_cnt_total">
+                            </th>
+                            <th class="text-center col-xs-4 column text-box add-group1">
+                                교회수
+                            </th>
+                            <th class="text-center col-xs-2 column text-box">
+                                <input type="text" style="width: 3em;border:none" ng-model="inputData.church_sum">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="text-center col-xs-4 column text-box add-group1">
+                                남성
+                            </th>
+                            <th class="text-center col-xs-2 column text-box">
+                                <input type="text" style="width: 3em;border:none" ng-model="inputData.app_cnt_m">
+                            </th>
+                            <th class="text-center col-xs-4 column text-box add-group1">
+                                여성
+                            </th>
+                            <th class="text-center col-xs-2 column text-box">
+                                <input type="text" style="width: 3em;border:none" ng-model="inputData.app_cnt_w">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="text-center col-xs-4 column text-box add-group1">
+                                배정객실
+                            </th>
+                            <th class="text-center col-xs-2 column text-box">
+                                <input type="text" style="width: 3em;border:none" ng-model="inputData.rooms_sum">
+                            </th>
+                            <th class="text-center col-xs-4 column text-box add-group1">
+                                (남)객실
+                            </th>
+                            <th class="text-center col-xs-2 column text-box">
+                                <input type="text" style="width: 3em;border:none" ng-model="inputData.rooms_m">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+
+                            </th>
+                            <th>
+
+                            </th>
+                            <th class="text-center col-xs-4 column text-box add-group1">
+                                (여)객실
+                            </th>
+                            <th class="text-center col-xs-2 column text-box">
+                                <input type="text" style="width: 3em;border:none" ng-model="inputData.rooms_w">
+                            </th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div><br>　
+            <button class="pull-right">저장</button><br>　
+            <table class="table tb-list table-bordered list-option table-striped" style="margin-top:0em;">
+                <thead>
+                <tr class="list-header-option">
+                    <th class="text-center col-xs-4 column">
+                        동명
+                    </th>
+                    <th class="text-center col-xs-4 column">
+                        객실
+                    </th>
+                    <th class="text-center col-xs-4 column">
+                        구분
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody class="text-center list-contents-option">
+                <tr ng-repeat="item in items">
+                    <td>{{item['house_name']}}</td>
+                    <td>{{item['room_no']}}</td>
+                    <td ng-click="gChange(item[$index]['gender'])">{{item['gender']}}</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal fade" id="modal-select-local" role="dialog" aria-labelledby="ChurchModal"
+         aria-hidden="true">
+        <div class="modal-frame">
+            <div class="modal-dialog modal-frame-align">
+                <div ng-include="'views/3000_contents/3100_enter/resort_local_popup.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>

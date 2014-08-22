@@ -106,7 +106,7 @@ angular.module('churchApp')
             return deferred.promise;
         };
 
-        executeResults.getEnteredList = function() {
+        executeResults.getEnteredList = function () {
             var deferred = $q.defer();
 
             //{annual: '', local: '', church: '', name: '', duty: '', gender: '', year: '', age: '', hp: ''};
@@ -151,6 +151,20 @@ console.log(local_id+" "+expect_cnt);
             );
             return deferred.promise;
         };
+
+        executeResults.getLocalListforResort = function() {
+            var deferred = $q.defer();
+            $http({
+                method: 'post',
+                url: '/getLocalListforResort'
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        };
+
+
 
         return executeResults;
     });
