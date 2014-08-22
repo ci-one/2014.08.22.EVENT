@@ -1,45 +1,60 @@
 <div>
     <link rel="stylesheet" href="styles/contents.css">
 
-    <!-- header -->
-    <div class="navbar-fixed-top sub-navbar header-bottom">
-        <!--<span>현재 참가 등록 {{count? count : 0}}명</span>-->
-        <marquee direction="left" loop="-1">현재 참가 등록 {{count? count : 0}}명</marquee>
-    </div>
-
     <!-- contents -->
     <div class="container-well">
         <div class="well01">
             <div class="row clearfix">
                 <div class="col-xs-12 column">
-                    <div class="tabbable" id="tabs">
-                        <div class="pull-right" ng-if="tabPage=='등록' || tabPage=='수정'">
-                            <button type="button" class="btn btn-danger" ng-click="submit();">{{tabPage}}
-                            </button>
-                        </div>
-                        <ul class="nav nav-tabs" ng-class="getTabClass()">
-                            <li ng-class="{active:tabPage=='등록'}" ng-click="tab_click('등록')">
-                                <a href="" data-taggle="tab">등록</a>
-                            </li>
-                            <li ng-class="{active:tabPage=='수정'}" ng-click="tab_click('수정')">
-                                <a href="" data-taggle="tab">수정</a>
-                            </li>
-                            <li ng-class="{active:tabPage=='열람'}" ng-click="tab_click('열람')">
-                                <a href="" data-taggle="tab">열람</a>
-                        </ul>
-                        <div ng-if="tabPage=='등록'">
-                            <div ng-include="'views/3000_contents/3100_enter/enter_prev_register.html'"></div>
-                        </div>
-                        <div ng-if="tabPage=='수정'">
-                            <div ng-include="'views/3000_contents/3100_enter/enter_prev_register.html'"></div>
-                        </div>
-                        <div ng-if="tabPage=='열람'">
-                            <div ng-include="'views/3000_contents/3100_enter/enter_prev_register.html'"></div>
-                        </div>
-                    </div>
+                    <div ng-include="'views/3000_contents/3100_enter/enter_prev_register.html'"></div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="container">
+        <table class="table tb-list table-bordered list-option">
+            <thead>
+            <tr class="list-header-option ">
+                <th class="text-center">
+                    <div><a href="" ng-click="toggleOrder('name')">
+                        성명 {{orderbyDesc['member_name']?'▼':'▲'}}
+                    </a></div>
+                    <div><input type="text" class="text-box" style="border-color:#868686; width: 5em" placeholder="검색조건"></div>
+                </th>
+                <th class="text-center">
+                    <div>직분</div>
+                    <div><input type="text" class="text-box" style="border-color:#868686; width: 5em"></div>
+                </th>
+                <th class="text-center">
+                    <div>성별</div>
+                    <div><input type="text" class="text-box" style="border-color:#868686; width: 5em"></div>
+                </th>
+                <th class="text-center">
+                    <div>
+                        <a href="" ng-click="toggleOrder('cname')">
+                            교회명 {{orderbyDesc['church_name']?'▼':'▲'}}
+                        </a>
+                    </div>
+                    <div><input type="text" class="text-box" style="border-color:#868686; width: 5em"></div>
+                </th>
+            </tr>
+            </thead>
+            <tbody class="text-center list-contents-option">
+            <tr ng-repeat="item in filterItems
+                    = (items
+                        | filter:{dutyname:search.dutyname}
+                        | filter:{memberid:search.memberid}
+                        | orderBy:ordering()
+                      )"
+                ng-if="currentPage*itemsPerPage <= $index && $index < (currentPage+1)*itemsPerPage">
+                <td>{{item['member_name']}}</td>
+                <td>{{item['org_name']}}</td>
+                <td>{{item['genter']}}</td>
+                <td>{{item['church_name']}}회</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
     <!-- footer -->

@@ -106,5 +106,51 @@ angular.module('churchApp')
             return deferred.promise;
         };
 
+        executeResults.getEnteredList = function() {
+            var deferred = $q.defer();
+
+            //{annual: '', local: '', church: '', name: '', duty: '', gender: '', year: '', age: '', hp: ''};
+
+            $http({
+                method: 'post',
+                url: '/getEnteredList'
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        };
+
+        // 참가사전등록 : object 형태로 묶어 받음
+        executeResults.getprvEnteredList = function() {
+            var deferred = $q.defer();
+
+            //{annual: '', local: '', church: '', name: '', duty: '', gender: '', year: '', age: '', hp: ''};
+
+            $http({
+                method: 'post',
+                url: '/getprvEnteredList'
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        };
+
+
+        executeResults.insertExpectCnt = function(local_id,expect_cnt){
+            var deferred = $q.defer();
+console.log(local_id+" "+expect_cnt);
+            $http({
+                method: 'post',
+                url: '/insertExpectCnt',
+                data:{local_id:local_id,expect_cnt:expect_cnt}
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        };
+
         return executeResults;
     });

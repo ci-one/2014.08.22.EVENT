@@ -2,8 +2,21 @@
     <!-- footer -->
     <div>
         <div class="navbar navbar-default navbar-fixed-bottom nav01">
+
+
+
+        <div ng-if="sub=='false'">
             <button type="button" class="btn btn-default pull-left btn-01" ng-click="login()">로그인</button>
             <a href="#" type="button" class="btn btn-default pull-right btn-01">첫화면</a>
+        </div>
+        <div ng-if="sub=='true'">
+            <button type="button" class="btn pull-left btn-danger" ng-click="login()">로그인</button>
+            <div class="pull-right">
+                <a href="#" type="button" class="btn btn-warning btn-01">첫화면</a>
+                <a href="/sub/#/5" type="button" class="btn btn-warning btn-01">숙소정보</a>
+                <a href="#" type="button" class="btn btn-warning btn-01">행사일정</a>
+            </div>
+        </div>
         </div>
     </div>
 </div>
