@@ -4,7 +4,7 @@ angular.module('churchApp', [
     'ngRoute',
     'ui.bootstrap'
 ])
-    .config(function ($routeProvider, $locationProvider) {
+    .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/3000_contents/contents.html'
