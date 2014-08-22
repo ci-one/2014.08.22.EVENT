@@ -5,7 +5,7 @@
 
 angular.module('churchApp')
     .controller('Contents1Ctrl', function ($scope, $routeParams, executeResults) {
-
+        $scope.count = 0;
         // 컬럼들의 정렬 순서가 담김 : ex. 1:'col1', 2: 'col2'
         $scope.orderby = {};
         // 컬럼들의 정렬 방법(isDesc)이 담김 : ex. 'col1':true, 'col2':true
@@ -24,7 +24,6 @@ angular.module('churchApp')
 
         // 각 정렬 컬럼 헤더를 클릭할 때마다 토글
         $scope.toggleOrder = function (type) {
-
             var fieldname = '';
 
             switch (type) {
@@ -49,8 +48,10 @@ angular.module('churchApp')
             // sort
             // 값 복제
             var _tmpArr = JSON.parse(JSON.stringify($scope.orderby));
+            console.log($scope.orderby);
             // 루프를 돌면서
             for (var i = 2, j = 1; j <= $scope.orderItems.length; ++j) {
+
                 // 컬럼이 일치하는 경우에 1번으로 보내고
                 if (_tmpArr[j] == fieldname)
                     $scope.orderby[1] = _tmpArr[j];
@@ -84,23 +85,22 @@ angular.module('churchApp')
                 }
             }
         }
+        var itm = {'local_name':'','expect_cnt':'','fixed_cnt':''};
         var arr = [];
         var getprvLst = function () {
             executeResults.getprvEnteredList().then(function (result) {
                 $scope.search = {local_name: '', expect_cnt: '', fixed_cnt: '', end: ''};
 
-                $scope.items = result.sending;
-
-
                 for (var i = 0; i < result.sending.length; i++) {
-                    if (result.sending[i].expect_cnt != 0) {
-                        $scope.etrTotal += parseInt(result.sending[i].fixed_cnt);
-                    }
-                    arr[i] = result.sending[i].expect_cnt;
+                    itm.local_name = result.sending[i].local_name;
+                    itm.expect_cnt = result.sending[i].expect_cnt;
+                    itm.fixed_cnt = result.sending[i].fixed_cnt;
+                    console.log(itm)
+                    arr.push(JSON.parse(JSON.stringify(itm)));
                 }
-                $scope.arr = arr;
+
             }).then(function () {
-                check();
+                $scope.items = arr;
             });
         };
         getprvLst();

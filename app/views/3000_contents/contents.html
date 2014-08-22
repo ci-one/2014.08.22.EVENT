@@ -73,10 +73,10 @@
                 </thead>
 
                 <tbody class="text-center list-contents-option">
-                <tr ng-repeat="item in (items) track by $index">
+                <tr ng-repeat="item in (items | orderBy:ordering()) track by $index">
                     <form>
                         <td>{{item['local_name']}}</td>
-                        <td><input type="text" class="text-center pull-right" ng-model="arr[$index]"></td>
+                        <td><input type="text" class="text-center pull-right" ng-model="item['expect_cnt']"></td>
                         <td><div class="text-center form-control2 pull-right">{{item['fixed_cnt']}}</div></td>
                     </form>
                 </tr>

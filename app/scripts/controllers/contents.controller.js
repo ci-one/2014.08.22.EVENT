@@ -39,9 +39,14 @@ angular.module('churchApp')
 
         // init
         $scope.tabPage = '';
-        $scope.count = 0;
 
 
+        var getList = function () {
+            executeResults.getEnteredList().then(function (result) {
+                $scope.items = result.sending;
+            })
+        }
+        getList();
 
         //처음에는 탭페이지 로딩하지 않음
         //$scope.tabPage = '등록';
