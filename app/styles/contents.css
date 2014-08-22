@@ -1,10 +1,12 @@
+
+
 .sub-navbar {
     background-color: yellowgreen;
     text-align: center;
 }
 
 .header-bottom {
-    margin-top: 3.5em;
+    margin-top: 3.0em;
     height: 1.5em;
     margin-bottom: 1em;
 }
@@ -189,3 +191,9 @@ input:focus{
     background-color: white;
     border:1px solid blue;
 }
+
+
+.mytitle{
+    font-size: 50px;
+}
+

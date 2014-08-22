@@ -1,20 +1,20 @@
+<!--<link rel="stylesheet" href="styles/main.css">-->
+<!--<link rel="stylesheet" href="styles/index.css">-->
+<!--<link rel="stylesheet" href="styles/menuList.css">-->
+<!--<link href="styles/phyengsin.css" rel="stylesheet">-->
 <div>
     <!-- footer -->
     <div>
-        <div class="navbar navbar-default navbar-fixed-bottom nav01">
-
-
-
+        <div class="jungbu-title navbar navbar-default navbar-fixed-bottom nav01">
         <div ng-if="sub=='false'">
-            <button type="button" class="btn btn-default pull-left btn-01" ng-click="login()">로그인</button>
-            <a href="#" type="button" class="btn btn-default pull-right btn-01">첫화면</a>
+            <button type="button" class="btn btn-default pull-left btn-01 btn-log" ng-click="login()">로그인</button>
         </div>
         <div ng-if="sub=='true'">
-            <button type="button" class="btn pull-left btn-danger" ng-click="login()">로그인</button>
+            <button type="button" class="btn pull-left btn-log" ng-click="login()">로그인</button>
             <div class="pull-right">
-                <a href="#" type="button" class="btn btn-warning btn-01">첫화면</a>
-                <a href="/sub/#/5" type="button" class="btn btn-warning btn-01">숙소정보</a>
-                <a href="#" type="button" class="btn btn-warning btn-01">행사일정</a>
+                <a href="#" type="button" class="btn btn-01 btn-al">첫화면</a>
+                <a href="/sub/#/5" type="button" class="btn btn-01 btn-al">숙소정보</a>
+                <a href="/sub/#/6" type="button" class="btn btn-01 btn-al">행사일정</a>
             </div>
         </div>
         </div>
