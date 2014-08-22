@@ -1,0 +1,215 @@
+@font-face {
+	font-family: 'Nanum Gothic';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/NanumGothic.eot');
+	src: url('../fonts/NanumGothic.eot?#iefix') format('embedded-opentype'), url('../fonts/NanumGothic.woff') format('woff'), url('../fonts/NanumGothic.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Nanum Gothic';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../fonts/NanumGothicBold.eot');
+	src: url('../fonts/NanumGothicBold.eot?#iefix') format('embedded-opentype'), url('../fonts/NanumGothicBold.woff') format('woff'), url('../fonts/NanumGothicBold.ttf');
+}
+@font-face {
+	font-family: 'Nanum Gothic';
+	font-style: normal;
+	font-weight: 800;
+	src: url('../fonts/NanumGothic-ExtraBold.ttf');
+	src: url('../fonts/NanumGothic-ExtraBold.eot?#iefix') format('embedded-opentype'), url('../fonts/NanumGothic-ExtraBold.woff') format('woff'), url('../fonts/NanumGothic-ExtraBold.ttf');
+}
+/*@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);*/
+
+/*{font-family: 'Nanum Myeongjo', serif;}*/
+* {font-family: 'Nanum Gothic', sans-serif;}
+/*공통*/
+body {
+	padding: 30px 0;
+}
+img {
+	max-width: 100%;
+}
+
+h1{font-family: 'Nanum Gothic', sans-serif; font-size:1.2em; margin:0 0 5px;}
+
+
+
+
+
+
+
+
+
+.jungbu-title {
+	background: #d0e4f7; /* Old browsers */
+	background: -moz-linear-gradient(top,  #d0e4f7 0%, #73b1e7 24%, #0a77d5 50%, #539fe1 79%, #87bcea 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d0e4f7), color-stop(24%,#73b1e7), color-stop(50%,#0a77d5), color-stop(79%,#539fe1), color-stop(100%,#87bcea)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7', endColorstr='#87bcea',GradientType=0 ); /* IE6-9 */
+	min-height: 25px;
+	margin-bottom: 5px;
+	box-shadow: 0 1px 2px #444;
+}
+.jungbu-title h2 {
+	margin-top: 8px;
+	color: #fff; /* Old browsers */
+	font-weight: 800;
+	font-size: 1.2em;
+	margin-bottom: 5px;
+}
+.container {
+	padding: 0 10px;
+}
+.jungbu-row {
+	margin: 15px -10px;
+}
+
+/*강사소개*/
+.media-heading {
+	font-size: 0.8em;
+}
+strong {
+	font-size: 1.3em;
+}
+.circle {
+	list-style-type: circle;
+	-webkit-padding-start: 20px;
+	-moz-padding-start: 20px;
+	-ms-padding-start: 20px;
+}
+.prof {
+	padding-bottom: 2px;
+	border-bottom: 2px solid #dbbca7;
+	font-size: 1em;
+	color: #ab8165;
+	font-weight: bold;
+}
+.jungbu-media {
+	border-bottom: 2px dotted #81b9a0;
+	padding: 30px 0;
+}
+.media-object {
+	margin-right: 10px;
+}
+.media > .pull-left {
+	margin-right: -5px;
+}
+.col-jungbu {
+	padding: 0;
+}
+.media-object img {
+	max-width: 100%;
+}
+.teacher-img {
+	padding: 0 5px 5px 0;
+}
+/*일정표*/
+
+.schedule {
+	margin-top: 15px;
+}
+.schedule td {
+	font-size: 0.9em;
+}
+.jung-tabs {
+	border-bottom: 1px solid #427475;
+}
+.jung-tabs > li.active > a, .jung-tabs > li.active > a:hover, .jung-tabs > li.active > a:focus {
+	background: #427475;
+	border: 1px solid #427475;
+	color: #fff;
+}
+.jung-tabs li a {
+	padding: 5px 8px;
+	font-size: 1.1em;
+	color: #486695;
+}
+.jung-tabs > li > a:hover, .jung-tabs > li > a:focus {
+	background: #B8CED8;
+	color: #fff;
+	border-bottom: 1px solid #427475;
+}
+.name {
+	font-weight: 800;
+	font-size: 1.1em;
+	color: #266397;
+}
+
+/*행사조직*/
+
+.well02 {
+    background: #e2e1e9;
+}
+.jungbu-col {
+	padding: 5px;
+}
+.jang {
+	font-size: 1.2em;
+	height: 107px;
+	padding: 15px 3px;
+	border: 3px outset #214d4e;
+	font-weight: 600;
+	line-height: 32px;
+	margin: 0 auto;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px #666;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(241,241,241,1)), color-stop(51%,rgba(225,225,225,1)), color-stop(100%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* IE10+ */
+	background: linear-gradient(135deg,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.circle2 {
+	list-style-type: circle;
+	-webkit-padding-start: 15px;
+	-moz-padding-start: 15px;
+	-ms-padding-start: 15px;
+}
+.name01 {
+	font-family: 'Nanum Myeongjo', serif;
+	font-size: 1.2em;
+	font-weight: 700;
+	color: #444444;
+}
+.jang2 {
+	padding: 3px 5px;
+	line-height: 20px;
+	font-size: 1.1em;
+}
+.jang3 {
+	padding: 15px 7px;
+	line-height: 25px;
+	font-size: 1.2em;
+}
+.jungbu-mem {
+	float: left;
+}
+.jungbu-mem .gg {
+	text-indent: 15px;
+	color: #999;
+}
+.jungbu-mem dd {
+	text-indent: 15px;
+	padding: 3px 0 10px;
+	color: #666;
+	font-weight: 600;
+}
+.jungbu-mem dt {
+	font-size: 1.1em;
+	font-weight: 600;
+}
+.bullet1 {
+	height: 16px;
+}
+
+
+.mytitle{
+    font-size: 50px;
+}

@@ -1,0 +1,250 @@
+<div>
+    <link rel="stylesheet" href="styles/contents.css">
+    <link rel="stylesheet" href="styles/phyengsin.css">
+
+    <!-- header -->
+    <div class="navbar-fixed-top sub-navbar header-bottom">
+        <!--<span>현재 참가 등록 {{count? count : 0}}명</span>-->
+        <marquee direction="left" loop="-1">현재 참가 등록 {{count? count : 0}}명</marquee>
+    </div>
+
+    <!-- contents -->
+    <div class="container-well">
+        <div class="well01">
+            <div class="row clearfix">
+                <div class="col-xs-12 column">
+                    <div class="tabbable" id="tabs">
+                        <div class="pull-right" ng-if="tabPage=='등록' || tabPage=='수정'">
+                            <button type="button" class="btn btn-danger" ng-click="submit();">{{tabPage}}
+                            </button>
+                        </div>
+
+                        <div>
+
+                        <div class="container">
+                        <div class="row clearfix jungbu-row">
+                        <div class="col-xs-12 column">
+                        <div class="media jungbu-media">
+                            <div class="teacher-img pull-left">
+                                <img src="images/teacher-01.jpg" class="media-object" alt='' />
+                                <p class="media-heading">
+                                    강사 <strong>왕대일</strong> 교수
+                                    <br>
+                                    (감신대 구약학)
+                                </p>
+                            </div>
+                            <div class="media-body">
+                                <p class="prof">
+                                    프로필
+                                </p>
+                                <ul class="circle">
+                                    <li>
+                                        감신대 구약학 교수(1990년부터 현재까지)
+                                    </li>
+                                    <li>
+                                        감신대 신학대학원장 역임
+                                    </li>
+                                    <li>
+                                        한국 구약학회 회장 역임
+                                    </li>
+                                    <li>
+                                        전국 신학대학 협의회 총무, 한국 신학교육연구원 원장 역임
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="media jungbu-media">
+                            <div class="teacher-img pull-left">
+                                <img src="images/teacher-02.jpg" class="media-object" alt='' />
+                                <p class="media-heading">
+                                    강사 <strong>이광희</strong>선도사
+                                    <br>
+                                    (음악선교사)
+                                </p>
+                            </div>
+                            <div class="media-body">
+                                <p class="prof">
+                                    프로필
+                                </p>
+                                <ul class="circle">
+                                    <li>
+                                        NGO 선한사람들 친선대사
+                                    </li>
+                                    <li>
+                                        미국 고어헤드선교회 이사
+                                    </li>
+                                    <li>
+                                        한국복음성가 대상 가수상2회 수상
+                                    </li>
+                                    <li>
+                                        CBS '새롭게하소서',CTS '내영혼의 찬양' 출연
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-12 col-jungbu">
+                                <ul class="circle">
+                                    <li>
+                                        음반 12집출반
+                                    </li>
+                                    <li>
+                                        대표곡 : 달리다굼, 이제 내가 살아도, 힘을 내세요, 나의남은생애는, 여보 미안해요.. 등 다수
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="media jungbu-media">
+                            <div class="teacher-img pull-left">
+                                <img src="images/teacher-04.jpg" class="media-object" alt='' />
+                                <p class="media-heading">
+                                    강사 <strong>김요한</strong> 목사
+                                    <br>
+                                    (신현교회)
+                                </p>
+                            </div>
+                            <div class="media-body">
+                                <p class="prof">
+                                    프로필
+                                </p>
+                                <ul class="circle">
+                                    <li>
+                                        영화초등학교, 상인천중학교, 송도고등학교 졸업
+                                    </li>
+                                    <li>
+                                        협성대학교 신학과 졸업
+                                    </li>
+                                    <li>
+                                        필리핀 Union Theology(M.Div)
+                                    </li>
+                                    <li>
+                                        미국 Southern Bapist Seminary(M.Div)
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-12 col-jungbu">
+                                <ul class="circle">
+                                    <li>
+                                        미국 Regent UNIV(목회학 박사)
+                                    </li>
+                                    <li>
+                                        미국 워싱턴 '사랑의 교회' 개척 17년간 담임
+                                    </li>
+                                    <li>
+                                        Maryland 교회협의회 회장(역임)
+                                    </li>
+                                    <li>
+                                        현)기독교대한감리회중부연회 새인천지방 감리사
+                                    </li>
+                                    <li>
+                                        현)신현교회 담임목사
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="media jungbu-media">
+                            <div class="teacher-img pull-left">
+                                <img src="images/teacher-05.jpg" class="media-object" alt='' />
+                                <p class="media-heading">
+                                    강사 <strong>지광식</strong> 목사
+                                    <br>
+                                    (성천교회)
+                                </p>
+                            </div>
+                            <div class="media-body">
+                                <p class="prof">
+                                    프로필
+                                </p>
+                                <ul class="circle">
+                                    <li>
+                                        시흥남지방 성천교회 담임
+                                    </li>
+                                    <li>
+                                        목원대학교 겸임교수(전) 특임교수(현)
+                                    </li>
+                                    <li>
+                                        목원대학교 신학대학 신학과 졸업
+                                    </li>
+                                    <li>
+                                        감리교신학대학 선교대학원 수학
+                                    </li>
+                                    <li>
+                                        평택대학교 사회개발대학원 사회복지학과 졸업(복지사)
+                                    </li>
+                                    <li>
+                                        오랄로버츠대학교 목회학박사
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="media jungbu-media">
+                            <div class="teacher-img pull-left">
+                                <img src="images/teacher-07.jpg" class="media-object" alt='' />
+                                <p class="media-heading">
+                                    강사 <strong>최헌영</strong> 목사
+                                    <br>
+                                    (원주제일교회)
+                                </p>
+                            </div>
+                            <div class="media-body">
+                                <p class="prof">
+                                    프로필
+                                </p>
+                                <ul class="circle">
+                                    <li>
+                                        동부연회 원주서지방 만종교회 담임
+                                    </li>
+                                    <li>
+                                        동부연회 춘천북지방 화천제일교회 담임
+                                    </li>
+                                    <li>
+                                        동부연회 춘천북지방 원주제일교회 담임
+                                    </li>
+                                    <li>
+                                        춘천북지방 감리사
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="col-xs-12 col-jungbu">
+                                <ul class="circle">
+                                    <li>
+                                        동부연회 서기
+                                    </li>
+                                    <li>
+                                        동부연회 국내외선교사업위원장
+                                    </li>
+                                    <li>
+                                        화천청소년 수련관장
+                                    </li>
+                                    <li>
+                                        자카르타 웨슬리신학대학 객원교수
+                                    </li>
+                                    <li>
+                                        본부 사단법인 아름다운 청소년들 상임이사
+                                    </li>
+                                    <li>
+                                        감리교신학대학교 유지이사
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="navbar-fixed-bottom sub-navbar footer-top">
+        <button type="button" class="btn btn-default btn01" ng-click="clickevent()">컨텐츠2</button>
+        <button type="button" class="btn btn-default btn01">업무2</button>
+        <button type="button" class="btn btn-default btn01">업무3</button>
+        <button type="button" class="btn btn-default btn01">업무4</button>
+    </div>
+</div>
