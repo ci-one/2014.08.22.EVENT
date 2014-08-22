@@ -5,24 +5,53 @@
     <div class="container-well" ng-controller="Contents1Ctrl">
         <div class="container">
 
+            <div class="navbar-fixed-top sub-navbar header-bottom">
 
-            <table class="table tb-list table-bordered list-option">
-                <thead>
-                <tr class="list-header-option add-group2 row clearfix">
-                    <th class="text-center col-xs-4 column">
-                        <div class="">합계</div>
-                    </th>
-                    <th class="text-center col-xs-4 column">
-                        <div>{{ectTotal}} 명</div>
-                    </th>
-                    <th class="text-center col-xs-4 column">
-                        <div>{{etrTotal}} 명</div>
-                    </th>
-                </tr>
-                </thead>
-            </table>
 
-            <table class="table tb-list table-bordered list-option">
+                <div class="container-well" style="padding-top:0px; background-color: white; border:none;box-shadow: 1px 1px 5px #888888;">
+                    <div class="container">
+                        <table class="table tb-list table-bordered list-option" style="margin-bottom: 0px;">
+                            <thead>
+                            <tr class="list-header-option add-group2 row clearfix">
+                                <th class="text-center col-xs-4 column">
+                                    <div class="">합계</div>
+                                </th>
+                                <th class="text-center col-xs-4 column">
+                                    <div>{{ectTotal}} 명</div>
+                                </th>
+                                <th class="text-center col-xs-4 column">
+                                    <div>{{etrTotal}} 명</div>
+                                </th>
+                            </tr>
+                            </thead>
+                        </table>
+                        <table class="table tb-list table-bordered list-option" style="margin-bottom:0px;>
+                        <thead>
+                        <tr class=" list-header-option>
+                            <th class="text-center col-xs-4 column">
+                                <a href="" ng-click="toggleOrder('lname')">
+                                    지방명 {{orderbyDesc['local_name']?'▼':'▲'}}
+                                </a>
+                            </th>
+                            <th class="text-center col-xs-4 column">
+                                <a href="" ng-click="toggleOrder('excnt')">
+                                    예상인원 {{orderbyDesc['expect_cnt']?'▼':'▲'}}
+                                </a>
+                            </th>
+                            <th class="text-center col-xs-4 column">
+                                <a href="" ng-click="toggleOrder('fxcnt')">
+                                    등록인원 {{orderbyDesc['fixed_cnt']?'▼':'▲'}}
+                                </a>
+                            </th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <table class="table tb-list table-bordered list-option table-striped" " style="margin-top:0em;">
                 <thead>
                 <tr class="list-header-option">
                     <th class="text-center col-xs-4 column">
@@ -42,17 +71,19 @@
                     </th>
                 </tr>
                 </thead>
+
                 <tbody class="text-center list-contents-option">
                 <tr ng-repeat="item in (items) track by $index">
                     <form>
                         <td>{{item['local_name']}}</td>
-                        <td><input type="text" class="text-center" ng-model="arr[$index]"></td>
-                        <td>{{item['fixed_cnt']}}</td>
+                        <td><input type="text" class="text-center pull-right" ng-model="arr[$index]"></td>
+                        <td><div class="text-center form-control2 pull-right">{{item['fixed_cnt']}}</div></td>
                     </form>
                 </tr>
 
                 </tbody>
             </table>
+            <br>
         </div>
     </div>
 

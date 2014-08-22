@@ -174,3 +174,25 @@ table > tbody > tr:hover,
 table > tbody > tr:focus {
     background-color: silver;
 }
+
+input{
+    width:50%;
+}
+
+th.text-center.col-xs-4.column{
+    border-right: none;
+
+}
+
+.form-control{
+    text-align: right;width:50px;box-shadow: none;background-color: transparent;
+}
+
+.form-control2{
+    text-align: right;width:50px;box-shadow: none;background-color: transparent;
+}
+
+input:focus{
+    background-color: white;
+    border:1px solid blue;
+}
