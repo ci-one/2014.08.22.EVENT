@@ -1,0 +1,114 @@
+<link rel="stylesheet" href="styles/contents.css">
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-xs-12 column">
+            <div class="row clearfix">
+                <div class="col-xs-5 column">
+                    <div class="row clearfix">
+                        <div class="col-xs-6 column">
+                            <div class="text-box  add-group1">
+                                계약<br>
+                                객실
+                            </div>
+                        </div>
+                        <div class="col-xs-6 column">
+                            <input class="form-control" type="text" style="width: 2em"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-7 column">
+                    <div class="row clearfix">
+                        <div class="col-xs-12 column">
+                            <div class="row clearfix">
+                                <div class="col-xs-6 column text-box add-group1">
+                                    <p>객실 배정</p>
+                                </div>
+                                <div class="col-xs-6 column">
+                                    <input class="form-control" type="text"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-xs-12 column">
+                            <div class="row clearfix">
+                                <div class="col-xs-6 column text-box add-group1">
+                                    <p>배정대기</p>
+                                </div>
+                                <div class="col-xs-6 column">
+                                    <input class="form-control" type="text"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-xs-12 column table-bordered">
+                    <div>
+                        <div class="row clearfix">
+                            <div class="col-xs-12 column">
+                                <div class="row clearfix">
+                                    <div class="col-xs-6 column">
+                                        <div class=" text-box add-group1"><p>지방회</p></div>
+                                    </div>
+                                    <div class="col-xs-6 column">
+                                        <input class="form-control" type="text"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-xs-12 column">
+                                <div class="row clearfix">
+                                    <div class="col-xs-4 column">
+                                        <div class=" text-box add-group1"><p>참가인원</p></div>
+                                    </div>
+                                    <div class="col-xs-1 column">
+                                        <input class="form-control" type="text"/>
+                                    </div>
+                                    <div class="col-xs-3 column">
+                                        <div class=" text-box add-group1"><p>배정</p></div>
+                                    </div>
+                                    <div class="col-xs-2 column">
+                                        <input class="form-control" type="text"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="pull-right btn1 btn">저장</button>
+                　<br>　
+            </div>
+            <table class="table tb-list table-bordered list-option table-striped" style="margin-top:0em;">
+                <thead>
+                <tr class="list-header-option">
+                    <th class="text-center col-xs-3 column">
+                        동명
+                    </th>
+                    <th class="text-center col-xs-4 column">
+                        객실
+                    </th>
+                    <th class="text-center col-xs-4 column">
+                        지방
+                    </th>
+                    <th class="text-center col-xs-1 column">
+                        V
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody class="text-center list-contents-option">
+                <tr ng-repeat="item in (items | orderBy:ordering()) track by $index">
+                    <td>{{item['local_name']}}</td>
+                    <td>{{item['local_name']}}</td>
+                    <td>{{item['local_name']}}</td>
+                    <td>{{item['local_name']}}</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

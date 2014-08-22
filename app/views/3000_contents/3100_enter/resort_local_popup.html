@@ -1,0 +1,25 @@
+<div class="modal-content" ng-controller="resortLocalCtrl">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="form-signin-heading">지방회 리스트</h4>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <table class="table tb-list">
+                <thead>
+                <tr>
+                    <th class="text-center">지방회</th>
+                    <th class="text-center">여부</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="click-this" ng-repeat="church in searchList" ng-click="click_list(church)">
+                    <td class="text-center">{{church['지방회']}}</td>
+                    <td ng-if="church['여부']!=null" class="text-center">배정</td>
+                    <td ng-if="church['여부']==null" class="text-center">대기</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
