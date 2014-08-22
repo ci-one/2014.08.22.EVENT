@@ -42,28 +42,28 @@ p {
     padding-left: 0;
 }
 
-.text02 {
-    letter-spacing: 13px;
-    text-indent: 5px;
-    padding-left: 10px;
-}
+/*.text02 {*/
+    /*letter-spacing: 13px;*/
+    /*text-indent: 5px;*/
+    /*padding-left: 10px;*/
+/*}*/
 
-.text03 {
-    letter-spacing: 5px;
-    padding-left: 8px;
-}
+/*.text03 {*/
+    /*letter-spacing: 5px;*/
+    /*padding-left: 8px;*/
+/*}*/
 
-.text04 {
-    letter-spacing: 17px;
-    padding-left: 20px;
-}
+/*.text04 {*/
+    /*letter-spacing: 17px;*/
+    /*padding-left: 20px;*/
+/*}*/
 
-.text05 {
-    letter-spacing: 33px;
-    padding-left: 35px;
-}
+/*.text05 {*/
+    /*letter-spacing: 33px;*/
+    /*padding-left: 35px;*/
+/*}*/
 
 .menu-container {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
