@@ -1,0 +1,29 @@
+<div class="modal-content" ng-controller="ContentsSelectChurchCtrl">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="form-signin-heading">교회 선택</h4>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <table class="table tb-list">
+                <thead>
+                <tr>
+                    <th class="text-center">연회</th>
+                    <th class="text-center">지방</th>
+                    <th class="text-center">교회</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="click-this" ng-repeat="church in searchList" ng-click="click_list(church)">
+                    <td class="text-center">{{church['연회명']}}</td>
+                    <td class="text-center">{{church['지방회명']}}</td>
+                    <td class="text-center">{{church['교회명']}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" ng-click="">추가</button>
+    </div>
+</div>

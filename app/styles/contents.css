@@ -1,0 +1,176 @@
+.sub-navbar {
+    background-color: yellowgreen;
+    text-align: center;
+}
+
+.header-bottom {
+    margin-top: 3.5em;
+    height: 1.5em;
+    margin-bottom: 1em;
+}
+
+.footer-top {
+    margin-top: 1em;
+    height: 2.7em;
+    margin-bottom: 3.6em;
+    vertical-align: middle;
+    padding: 0.2em;
+}
+
+.container-well {
+    padding-top: 3.9em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.container-wnd {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.well01 {
+    margin-bottom: 3em;
+}
+
+.btn01 {
+    height: 2.3em;
+}
+
+.text-area {
+    margin: 0;
+    padding: 0.41em;
+    border-radius: 3px;
+}
+
+.inner-title {
+    margin-left: 0px;
+}
+
+.inner-remove-padding-left {
+    padding-left: 0px;
+}
+
+.inner-remove-padding-right {
+    padding-right: 0px;
+}
+
+.inner-remove-padding-all {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.text-box {
+    text-align: center;
+
+    padding: 0.05em 0em;
+
+    color: black;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 3px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.nav-tabs > li > a {
+    color: black;
+}
+
+.tabs-option-add > li.active > a,
+.tabs-option-add > li.active > a:hover,
+.tabs-option-add > li.active > a:focus {
+    background-color: yellowgreen;
+}
+
+.tabs-option-edit > li.active > a,
+.tabs-option-edit > li.active > a:hover,
+.tabs-option-edit > li.active > a:focus {
+    color: white;
+    background-color: #ed9c28;
+}
+
+.tabs-option-list > li.active > a,
+.tabs-option-list > li.active > a:hover,
+.tabs-option-list > li.active > a:focus {
+    color: white;
+    background-color: #39b3d7;
+}
+
+.tabs-container-add {
+    background-color: yellowgreen;
+}
+.tabs-container-edit {
+    background-color: #ed9c28;
+}
+.tabs-container-list {
+    background-color: #39b3d7;
+}
+
+p {
+    margin: 0.4em;
+}
+
+p.no-margin {
+    margin: 0px;
+}
+
+.add-group1 {
+    background-color: olive;
+}
+
+.add-group2 {
+    background-color: lightcyan;
+}
+
+.add-group3 {
+    background-color: saddlebrown;
+}
+
+.add-group-white {
+    background-color: white;
+}
+
+a.area {
+    color: black;
+    text-decoration: none !important;
+}
+
+li.btn {
+    color: white;
+    background-color: red;
+}
+
+.input-group-addon-custom {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.ng-invalid {
+    border: 1px solid red !important;
+}
+
+.modal-frame {
+    width: 90%;
+    height: 100%;
+    display: table;
+}
+
+.modal-frame-align {
+    display: table-cell;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.click-this {
+    cursor: pointer;
+}
+
+table > tbody > tr:hover,
+table > tbody > tr:focus {
+    background-color: silver;
+}

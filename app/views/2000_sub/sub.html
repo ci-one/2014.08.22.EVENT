@@ -1,0 +1,28 @@
+<div>
+    <!-- contents -->
+    <div class="container container01">
+        <div ng-include="'views/1000_main/menuList.html'"></div>
+        <div class="well well01" ng-if="middleMenu">
+            <div class="row clearfix">
+                <link rel="stylesheet" href="styles/sub.css">
+                <div class="col-md-12 column">
+                    <div class="row clearfix">
+                        <div class="col-xs-2 column">
+                            <p class="middle-menu">{{middleMenu}}</p>
+                        </div>
+                        <div class="col-xs-10 column">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column" ng-repeat="smallmenu in smallMenuList | filter:group=middleMenu">
+                                    <button type="button" class="btn btn-default"
+                                            ng-click="click_contents(smallmenu.name)">
+                                        {{smallmenu.name}}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

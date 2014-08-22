@@ -1,0 +1,69 @@
+
+img {
+    max-width: 100%;
+}
+
+p {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.group1 {
+    margin: 5px 0;
+}
+
+.b1 {
+    font-weight: 300;
+}
+
+.btn01 {
+    height: 60px;
+}
+
+.tt1 {
+    background: cornflowerblue;
+    padding: 5px;
+    padding-right: 0;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.text01 {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.mystyle {
+    padding: 0;
+}
+
+.myst {
+    padding-left: 0;
+}
+
+.text02 {
+    letter-spacing: 13px;
+    text-indent: 5px;
+    padding-left: 10px;
+}
+
+.text03 {
+    letter-spacing: 5px;
+    padding-left: 8px;
+}
+
+.text04 {
+    letter-spacing: 17px;
+    padding-left: 20px;
+}
+
+.text05 {
+    letter-spacing: 33px;
+    padding-left: 35px;
+}
+
+.menu-container {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

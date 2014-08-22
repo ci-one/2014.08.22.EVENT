@@ -1,0 +1,121 @@
+<div ng-controller="ContentsEnterPrevRegisterCtrl" ng-class="getTabContainerClass()">
+    <!-- 참가신청등록 -->
+    <form name="inputForm">
+        <div class="container-wnd">
+            <div class="row clearfix inner-title">
+                <div class="col-xs-12 column">
+                    <div class="row clearfix">
+                        <div class="col-xs-3 column text-box add-group1">
+                            <p>교회명</p>
+                        </div>
+                        <div class="col-xs-9 column">
+                            <input type="text" ng-model="selectedChurch" class="form-control"
+                                   typeahead="church as church['교회명'] for church in churchList | filter:$viewValue | limitTo:5"
+                                   typeahead-on-select="selectChurch()"
+                                   ng-keydown="($event.which === 13)? selectChurch():0">
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-xs-3 column text-box add-group2">
+                            <p>연 회</p>
+                        </div>
+                        <div class="col-xs-9 column">
+                            <input type="text" ng-model="inputData.annual" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-xs-3 column text-box add-group2">
+                            <p>지 방</p>
+                        </div>
+                        <div class="col-xs-9 column">
+                            <input type="text" ng-model="inputData.local" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-xs-3 column text-box add-group2">
+                            <p>교회명</p>
+                        </div>
+                        <div class="col-xs-9 column">
+                            <input type="text" ng-model="inputData.church" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-xs-3 column text-box add-group3">
+                            <p>성 명</p>
+                        </div>
+                        <div class="col-xs-9 column">
+                            <input type="text" ng-model="inputData.name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-xs-3 column text-box add-group3">
+                            <p>직 분</p>
+                        </div>
+                        <div class="col-xs-9 column">
+                            <select ng-model="inputData.duty" class="form-control"
+                                    ng-options="duty for duty in dutyList">
+                                <option value="">선택해주세요</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-xs-3 column text-box add-group3">
+                            <p>성 별</p>
+                        </div>
+                        <div class="col-xs-9 column">
+                            <div class="text-area add-group-white">
+                                <a href="" ng-click="inputData.gender='M'" class="area">
+                                    <input type="radio" ng-model="inputData.gender" value="M">남성
+                                </a>
+                                　
+                                <a href="" ng-click="inputData.gender='F'" class="area">
+                                    <input type="radio" ng-model="inputData.gender" value="F">여성
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-xs-3 column text-box add-group3">
+                            <p>년 령</p>
+                        </div>
+                        <div class="col-xs-5 column inner-remove-padding-right">
+                            <p class="input-group no-margin">
+                                <input type="text" ng-model="inputData.year" class="form-control" placeholder="출생년도"
+                                       name="year" key-filter-only-number="" maxlength="4"/>
+                                <span class="input-group-addon input-group-addon-custom">
+                                    년
+                                </span>
+                            </p>
+                        </div>
+                        <div class="col-xs-4 column inner-remove-padding-left">
+                            <p class="input-group no-margin">
+                                <input type="text" ng-model="inputData.age" class="form-control" placeholder="나이"
+                                       name="age" key-filter-only-number="" maxlength="3"/>
+                                <span class="input-group-addon input-group-addon-custom">
+                                    세
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-xs-3 column text-box add-group3">
+                            <p>휴대폰</p>
+                        </div>
+                        <div class="col-xs-9 column">
+                            <input type="text" ng-model="inputData.hp" class="form-control" placeholder="010-1234-5678"
+                                   name="hp" key-filter-phone="" maxlength="13">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="modal fade" id="modal-select-church" role="dialog" aria-labelledby="ChurchModal"
+         aria-hidden="true">
+        <div class="modal-frame">
+            <div class="modal-dialog modal-frame-align">
+                <div ng-include="'views/3000_contents/3100_enter/select_church_popup.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>
