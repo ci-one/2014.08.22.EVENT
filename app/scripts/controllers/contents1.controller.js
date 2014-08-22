@@ -24,6 +24,8 @@ angular.module('churchApp')
 
         // 각 정렬 컬럼 헤더를 클릭할 때마다 토글
         $scope.toggleOrder = function (type) {
+            $scope.tryOrder = true;
+
             var fieldname = '';
 
             switch (type) {
@@ -48,7 +50,6 @@ angular.module('churchApp')
             // sort
             // 값 복제
             var _tmpArr = JSON.parse(JSON.stringify($scope.orderby));
-            console.log($scope.orderby);
             // 루프를 돌면서
             for (var i = 2, j = 1; j <= $scope.orderItems.length; ++j) {
 
@@ -62,7 +63,7 @@ angular.module('churchApp')
                 }
             }
 
-            console.log($scope.orderby);
+            $scope.tryOrder = false;
         };
 
         // order by를 위한 함수
@@ -76,43 +77,49 @@ angular.module('churchApp')
             return orderArray;
         };
 
-        $scope.etrTotal = 0;
+
         var check = function () {
             $scope.ectTotal = 0;
-            for (var a = 0; a < $scope.arr.length; a++) {
-                if ($scope.arr[a] != 0) {
-                    $scope.ectTotal += parseInt($scope.arr[a])
+            $scope.etrTotal = 0;
+            for (var a = 0; a < $scope.items.length; a++) {
+                if ($scope.items[a].expect_cnt != 0) {
+                    $scope.ectTotal += parseInt($scope.items[a].expect_cnt);
+                    $scope.etrTotal += parseInt($scope.items[a].fixed_cnt);
                 }
             }
-        }
-        var itm = {'local_name':'','expect_cnt':'','fixed_cnt':''};
+        };
+
+        var itm = {'local_id':0,'local_name': '', 'expect_cnt': 0, 'fixed_cnt': 0};
         var arr = [];
         var getprvLst = function () {
             executeResults.getprvEnteredList().then(function (result) {
-                $scope.search = {local_name: '', expect_cnt: '', fixed_cnt: '', end: ''};
+                $scope.oriitems = result.sending;
+                $scope.search = {local_name: '', expect_cnt: 0, fixed_cnt: '', end: ''};
 
                 for (var i = 0; i < result.sending.length; i++) {
+                    itm.local_id = result.sending[i].local_id;
                     itm.local_name = result.sending[i].local_name;
                     itm.expect_cnt = result.sending[i].expect_cnt;
                     itm.fixed_cnt = result.sending[i].fixed_cnt;
-                    console.log(itm)
                     arr.push(JSON.parse(JSON.stringify(itm)));
                 }
 
             }).then(function () {
                 $scope.items = arr;
+                check();
             });
         };
         getprvLst();
 
 
-        $scope.intExpCnt = function () {
+        $scope.intExpCnt = function () {console.log('aa')
             var local_id = '';
             var expect_cnt = '';
-            for (var i = 0; i < arr.length; i++) {
-                if ($scope.arr[i] != $scope.items[i].expect_cnt) {
+            for (var i = 0; i < $scope.items.length; i++) {
+                if ($scope.oriitems[i].expect_cnt != $scope.items[i].expect_cnt) {
+
                     local_id = $scope.items[i].local_id;
-                    expect_cnt = $scope.arr[i];
+                    expect_cnt = $scope.items[i].expect_cnt;
                     executeResults.insertExpectCnt(local_id, expect_cnt).then(
                     );
                 }
@@ -126,5 +133,9 @@ angular.module('churchApp')
             });
         };
         getInfo();
+
+        $scope.$watch('items', function(newV, oldV) {
+            $scope.tryOrder = false;
+        })
     });
 
