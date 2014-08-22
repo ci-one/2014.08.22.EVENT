@@ -8,7 +8,8 @@
             <div class="navbar-fixed-top sub-navbar header-bottom">
 
 
-                <div class="container-well" style="padding-top:0px; background-color: white; border:none;box-shadow: 1px 1px 5px #888888;">
+                <div class="container-well"
+                     style="padding-top:0px; background-color: white; border:none;box-shadow: 1px 1px 5px #888888;">
                     <div class="container">
                         <table class="table tb-list table-bordered list-option" style="margin-bottom: 0px;">
                             <thead>
@@ -25,33 +26,34 @@
                             </tr>
                             </thead>
                         </table>
-                        <table class="table tb-list table-bordered list-option" style="margin-bottom:0px;>
+
+                        <table class="table tb-list table-bordered list-option" style="margin-bottom:0px;">
                         <thead>
-                        <tr class=" list-header-option>
+                        <tr class="list-header-option">
                             <th class="text-center col-xs-4 column">
-                                <a href="" ng-click="toggleOrder('lname')">
-                                    지방명 {{orderbyDesc['local_name']?'▼':'▲'}}
-                                </a>
-                            </th>
-                            <th class="text-center col-xs-4 column">
-                                <a href="" ng-click="toggleOrder('excnt')">
-                                    예상인원 {{orderbyDesc['expect_cnt']?'▼':'▲'}}
-                                </a>
-                            </th>
-                            <th class="text-center col-xs-4 column">
-                                <a href="" ng-click="toggleOrder('fxcnt')">
-                                    등록인원 {{orderbyDesc['fixed_cnt']?'▼':'▲'}}
-                                </a>
-                            </th>
-                            </tr>
-                            </thead>
+                        <a href="" ng-click="toggleOrder('lname')">
+                            지방명 {{orderbyDesc['local_name']?'▼':'▲'}}
+                        </a>
+                        </th>
+                        <th class="text-center col-xs-4 column">
+                            <a href="" ng-click="toggleOrder('excnt')">
+                                예상인원 {{orderbyDesc['expect_cnt']?'▼':'▲'}}
+                            </a>
+                        </th>
+                        <th class="text-center col-xs-4 column">
+                            <a href="" ng-click="toggleOrder('fxcnt')">
+                                등록인원 {{orderbyDesc['fixed_cnt']?'▼':'▲'}}
+                            </a>
+                        </th>
+                        </tr>
+                        </thead>
                         </table>
                     </div>
                 </div>
             </div>
 
 
-            <table class="table tb-list table-bordered list-option table-striped" " style="margin-top:0em;">
+            <table class="table tb-list table-bordered list-option table-striped" style="margin-top:0em;">
                 <thead>
                 <tr class="list-header-option">
                     <th class="text-center col-xs-4 column">
@@ -77,7 +79,9 @@
                     <form>
                         <td>{{item['local_name']}}</td>
                         <td><input type="text" class="text-center pull-right" ng-model="item['expect_cnt']"></td>
-                        <td><div class="text-center form-control2 pull-right">{{item['fixed_cnt']}}</div></td>
+                        <td>
+                            <div class="text-center form-control2 pull-right">{{item['fixed_cnt']}}</div>
+                        </td>
                     </form>
                 </tr>
 
