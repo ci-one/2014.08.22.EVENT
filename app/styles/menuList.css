@@ -11,6 +11,7 @@ p {
 
 .group1 {
     margin: 5px 0;
+    padding-right: 0px;
 }
 
 .b1 {
@@ -44,7 +45,8 @@ p {
 /*}*/
 
 .myst {
-    padding-left: 0;
+    padding-left: 0px;
+
 }
 
 /*.text02 {*/
