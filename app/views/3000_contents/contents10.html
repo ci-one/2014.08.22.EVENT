@@ -1,4 +1,12 @@
-<div  ng-controller="Contents1Ctrl">
+<div ng-controller="ContentsEnterPrevRegisterCtrl" ng-class="getTabContainerClass()">
+<!--<script type="text/javascript">-->
+    <!--function tempController($scope){-->
+        <!--$scope.items=[{name:'부천서지방',check:null},{name:'부천남지방',check:null},{name='부천동지방',check:null}.{name='부천북지방',check:null}];-->
+    <!--}-->
+
+<!--</script>-->
+
+<!--<div   ng-controller="tempController">-->
     <link rel="stylesheet" href="styles/contents.css">
     <link rel="stylesheet" href="styles/phyengsin.css">
 
@@ -20,21 +28,484 @@
                         </div>
 
                         <div>
-                            지방회 교회
+                            <link rel="stylesheet" href="styles/contents.css">
+                            <link rel="stylesheet" href="styles/phyengsin.css">
+
+                            <!-- contents -->
+                            <div class="container-well">
+                                <div class="container">
+
+                                    <div class="navbar-fixed-top sub-navbar header-bottom">
+
+
+                                        <div class="container-well fixed-con">
+                                            <div class="container" style="padding:5px;">
+                                                <div class="text-center col-xs-2 column" style="padding-left: 0px;margin-left: 0px;">
+                                                    <div class="btn-suk" stytle="padding-left:0px; margin-left:0px;">검<br>색<br>조<br>건</div>
+                                                </div>
+                                                <div class="text-center col-xs-5 column btn-cham">
+                                                    <div>
+                                                        지방회
+
+
+                                                        <div>
+                                                            <!-- 참가신청등록 -->
+                                                            <form name="inputForm">
+                                                                <div class="container-wnd">
+                                                                    <div class="row clearfix inner-title">
+                                                                        <div class="col-xs-12 column">
+                                                                            <div class="row clearfix">
+
+
+                                                                                <!--<input type="text" ng-model="selectedChurch" class="form-control"-->
+                                                                                <!--typeahead="church as church['교회명'] for church in churchList | filter:$viewValue | limitTo:5"-->
+                                                                                <!--typeahead-on-select="selectChurch()"-->
+                                                                                <!--ng-keydown="($event.which === 13)? selectChurch():0">-->
+                                                                                <input type="text"
+                                                                                       class="form-control cname">
+
+                                                                            </div>
+
+                                                                            <!--<div class="row clearfix">-->
+                                                                            <!--<div class="col-xs-3 column text-box add-group2">-->
+                                                                            <!--<p>지 방</p>-->
+                                                                            <!--</div>-->
+                                                                            <!--<div class="col-xs-9 column">-->
+                                                                            <!--<input type="text" ng-model="inputData.local" class="form-control">-->
+                                                                            <!--</div>-->
+                                                                            <!--</div>-->
+                                                                            <!--<div class="row clearfix">-->
+                                                                            <!--<div class="col-xs-3 column text-box add-group2">-->
+                                                                            <!--<p>교회명</p>-->
+                                                                            <!--</div>-->
+                                                                            <!--<div class="col-xs-9 column">-->
+                                                                            <!--<input type="text" ng-model="inputData.church" class="form-control">-->
+                                                                            <!--</div>-->
+                                                                            <!--</div>-->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                            <div class="modal fade" id="modal-select-church"
+                                                                 role="dialog" aria-labelledby="ChurchModal"
+                                                                 aria-hidden="true">
+                                                                <div class="modal-frame">
+                                                                    <div class="modal-dialog modal-frame-align">
+                                                                        <div ng-include="'views/3000_contents/3100_enter/select_church_popup.html'"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center col-xs-5 column  btn-cham">
+                                                    <div>
+                                                        교회
+
+
+                                                        <div>
+                                                            <!-- 참가신청등록 -->
+                                                            <form name="inputForm">
+                                                                <div class="container-wnd">
+                                                                    <div class="row clearfix inner-title">
+                                                                        <div class="col-xs-12 column">
+                                                                            <div class="row clearfix">
+
+
+                                                                                <input type="text" ng-model="selectedChurch" class="form-control"
+                                                                                typeahead="church as church['교회명'] for church in churchList | filter:$viewValue | limitTo:5"
+                                                                                typeahead-on-select="selectChurch()"
+                                                                                ng-keydown="($event.which === 13)? selectChurch():0">
+                                                                                <!--<input type="text"-->
+                                                                                       <!--class="form-control cname">-->
+
+                                                                            </div>
+
+                                                                            <!--<div class="row clearfix">-->
+                                                                            <!--<div class="col-xs-3 column text-box add-group2">-->
+                                                                            <!--<p>지 방</p>-->
+                                                                            <!--</div>-->
+                                                                            <!--<div class="col-xs-9 column">-->
+                                                                            <!--<input type="text" ng-model="inputData.local" class="form-control">-->
+                                                                            <!--</div>-->
+                                                                            <!--</div>-->
+                                                                            <!--<div class="row clearfix">-->
+                                                                            <!--<div class="col-xs-3 column text-box add-group2">-->
+                                                                            <!--<p>교회명</p>-->
+                                                                            <!--</div>-->
+                                                                            <!--<div class="col-xs-9 column">-->
+                                                                            <!--<input type="text" ng-model="inputData.church" class="form-control">-->
+                                                                            <!--</div>-->
+                                                                            <!--</div>-->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="row clearfix jungbu-row well well-sm well02" style="height: 200px;">
+                                <div class="col-xs-12 column jungbu-col">
+                                    <div class="tabbable" id="tabs-441416">
+
+
+                                    </div>
+
+
+                                    <div class="row clearfix">
+                                        <div class="col-xs-5 column jungbu-col">
+
+                                            <p class="text-center jang2">
+                                                지방회
+                                            </p>
+
+
+
+                                            <script language="javascript">
+                                                function change(param){
+                                                    if(param==1){
+                                                        document.all("change_div").innerHTML="<img src='images/samples/ic01.png'>";
+                                                    }else if(param==2){
+                                                        document.all("change_div").innerHTML="<img src='images/samples/ic02.png'>";
+                                                    }else if(param==3){
+                                                        document.all("change_div").innerHTML="<img src='images/samples/ic03.png'>";
+                                                    }else if(param==4){
+                                                        document.all("change_div").innerHTML="<img src='images/samples/ic04.png'>";
+                                                    }
+                                                }
+                                                function change2(param){
+                                                    if(param==1){
+                                                        document.all("change_div").innerHTML="<img src='images/samples/ic-01-01.png'>";
+                                                    }else if(param==2){
+                                                        document.all("change_div").innerHTML="<img src='images/samples/ic-01-02.png'>";
+                                                    }else if(param==3){
+                                                        document.all("change_div").innerHTML="<img src='images/samples/ic-01-03.png'>";
+                                                    }else if(param==4){
+                                                        document.all("change_div").innerHTML="<img src='images/samples/ic-01-04.png'>";
+                                                    }
+                                                }
+                                            </script>
+
+                                            <form   style=" height:140px; ;overflow-y:scroll ">
+                                            <table>
+                                                <tbody class="text-center list-contents-option">
+                                                <tr ng-repeat="item in items">
+                                                    <!--<td class="col-xs-11 column" style="background-color: white ;border: 2px solid ghostwhite">{{item.name}}</td>-->
+                                                    <!--<td class="col-xs-1 column" style="background-color: white ;border: 2px solid ghostwhite"><input type="radio" ></td>-->
+
+
+                                                    <td class="col-xs-11 column modtd"
+                                                        style="background-color: white ;border: 2px solid ghostwhite">
+                                                        <a href="#panel-bc_se" data-toggle="tab">인천서지방</a>
+                                                    </td>
+                                                    <td class="col-xs-1 column modtd"
+                                                        style="background-color: white ;border: 2px solid ghostwhite">
+                                                        <input type="button" value="?" onclick="change(2)"></td>
+                                                </tr>
+
+                                                <tr ng-repeat="item in items">
+
+                                                    <td class="col-xs-11 column modtd"
+                                                        style="background-color: white ;border: 2px solid ghostwhite">
+                                                        <a href="#panel-bc_nam" data-toggle="tab">인천남지방</a>
+                                                    </td>
+                                                    <td class="col-xs-1 column modtd"
+                                                        style="background-color: white ;border: 2px solid ghostwhite">
+                                                        <input type="button" value="?" onclick="change(3)"></td>
+                                                </tr>
+
+                                                <tr ng-repeat="item in items">
+                                                    <td class="col-xs-11 column modtd"
+                                                        style="background-color: white ;border: 2px solid ghostwhite">
+                                                        <a href="#panel-bc_dong" data-toggle="tab">인천동지방</a>
+                                                    </td>
+                                                    <td class="col-xs-1 column modtd"
+                                                        style="background-color: white ;border: 2px solid ghostwhite">
+                                                        <input type="button" value="?" onclick="change(1)"></td>
+                                                </tr>
+
+                                                <tr ng-repeat="item in items">
+                                                    <td class="col-xs-11 column modtd"
+                                                        style="background-color: white ;border: 2px solid ghostwhite">
+                                                        <a href="#panel-bc_book" data-toggle="tab">인천북지방</a>
+                                                    </td>
+                                                    <td class="col-xs-1 column modtd"
+                                                        style="background-color: white ;border: 2px solid ghostwhite">
+                                                        <input type="button" value="?" onclick="change(4)"></td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+                                            </form>
+
+                                        </div>
+
+                                        <div class="col-xs-2 column jungbu-col glyphicon glyphicon-chevron-right text-center"
+                                             style="margin-top: 5px;padding-left: 0px; margin-left: 0px;">
+
+                                        </div>
+
+
+                                        <div class="col-xs-5 column jungbu-col">
+                                            <p class="text-center jang2">
+                                                교회
+                                            </p>
+                                            <div class="tab-content" style=" height:140px; ;overflow-y:scroll ">
+                                                <div class="tab-pane" id="panel-bc_se">
+                                                    <p>
+                                                    <table>
+                                                        <tbody class="text-center list-contents-option">
+                                                        <tr ng-repeat="item in items">
+                                                            <!--<td class="col-xs-11 column modtd" style="background-color: white ;border: 2px solid ghostwhite">{{item.name}}</td>-->
+                                                            <!--<td class="col-xs-1 column modtd" style="background-color: white ;border: 2px solid ghostwhite"><input type="radio" ></td>-->
+
+
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                새길교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change2(1)"></td>
+                                                        </tr><tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                큰빛교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change2(2)"></td>
+                                                        </tr><tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                선일교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change2(3)"></td>
+                                                        </tr>
+                                                        </tr><tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                부평중앙교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change2(4)"></td>
+                                                        </tr>
+
+
+
+
+                                                        </tbody>
+                                                    </table>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane " id="panel-bc_dong">
+                                                    <p>
+                                                    <table>
+                                                        <tbody class="text-center list-contents-option">
+                                                        <tr ng-repeat="item in items">
+                                                            <!--<td class="col-xs-11 column" style="background-color: white ;border: 2px solid ghostwhite">{{item.name}}</td>-->
+                                                            <!--<td class="col-xs-1 column" style="background-color: white ;border: 2px solid ghostwhite"><input type="radio" ></td>-->
+
+
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                인천 동쪽 기둥교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr><tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                인천 동쪽 교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr>
+
+
+
+                                                        </tbody>
+                                                    </table>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane " id="panel-bc_nam">
+                                                    <p>
+                                                    <table>
+                                                        <tbody class="text-center list-contents-option">
+                                                        <tr ng-repeat="item in items">
+                                                            <!--<td class="col-xs-11 column" style="background-color: white ;border: 2px solid ghostwhite">{{item.name}}</td>-->
+                                                            <!--<td class="col-xs-1 column" style="background-color: white ;border: 2px solid ghostwhite"><input type="radio" ></td>-->
+
+
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                남쪽 기둥교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr><tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                남쪽 교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr><tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                두번째 남쪽 교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr><tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                세번째 남쪽 교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr><tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                네번째 남쪽 교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr>
+                                                       </tbody>
+                                                    </table>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane " id="panel-bc_book">
+                                                    <p>
+                                                    <table>
+                                                        <tbody class="text-center list-contents-option">
+                                                        <tr ng-repeat="item in items">
+                                                            <!--<td class="col-xs-11 column" style="background-color: white ;border: 2px solid ghostwhite">{{item.name}}</td>-->
+                                                            <!--<td class="col-xs-1 column" style="background-color: white ;border: 2px solid ghostwhite"><input type="radio" ></td>-->
+
+
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                북쪽 기둥교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr><tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                북북동쪽 교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr><tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                북서북 교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr><tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                파주 감리 교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr><tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                일산 조은 교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr>
+                                                        <tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                일산 더조은 교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr>
+                                                        <tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                남양주 생명 교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr>
+                                                        <tr ng-repeat="item in items">
+                                                            <td class="col-xs-11 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                강화 성산 교회
+                                                            </td>
+                                                            <td class="col-xs-1 column modtd"
+                                                                style="background-color: white ;border: 2px solid ghostwhite">
+                                                                <input type="button" value="?" onclick="change()"></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div>
+                                <div id = "change_div">버튼을 누르시면 사진이 보여집니다</div>
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
     </div>
+</div>
+</div>
+</div>
 
 
-
-    <!--&lt;!&ndash; footer &ndash;&gt;-->
-    <!--<div class="navbar-fixed-bottom sub-navbar footer-top">-->
-        <!--<button type="button" class="btn btn-default btn01" ng-click="clickevent()">컨텐츠2</button>-->
-        <!--<button type="button" class="btn btn-default btn01">업무2</button>-->
-        <!--<button type="button" class="btn btn-default btn01">업무3</button>-->
-        <!--<button type="button" class="btn btn-default btn01">업무4</button>-->
-    <!--</div>-->
 </div>
