@@ -1,5 +1,6 @@
 <div  ng-controller="Contents1Ctrl">
     <link rel="stylesheet" href="styles/contents.css">
+    <link rel="stylesheet" href="styles/phyengsin.css">
 
     <!-- header -->
     <div class="navbar-fixed-top sub-navbar header-bottom">
@@ -28,38 +29,6 @@
     </div>
 
 
-    <table class="table tb-list table-bordered list-option table-striped" " style="margin-top:0em;">
-    <thead>
-    <!--<tr class="list-header-option">-->
-    <!--<th class="text-center col-xs-4 column">-->
-    <!--<a href="" ng-click="toggleOrder('lname')">-->
-    <!--지방명 {{orderbyDesc['local_name']?'▼':'▲'}}-->
-    <!--</a>-->
-    <!--</th>-->
-    <!--<th class="text-center col-xs-4 column">-->
-    <!--<a href="" ng-click="toggleOrder('excnt')">-->
-    <!--예상인원 {{orderbyDesc['expect_cnt']?'▼':'▲'}}-->
-    <!--</a>-->
-    <!--</th>-->
-    <!--<th class="text-center col-xs-4 column">-->
-    <!--<a href="" ng-click="toggleOrder('fxcnt')">-->
-    <!--등록인원 {{orderbyDesc['fixed_cnt']?'▼':'▲'}}-->
-    <!--</a>-->
-    <!--</th>-->
-    <!--</tr>-->
-    </thead>
-
-    <tbody class="text-center list-contents-option">
-    <tr ng-repeat="item in (items | orderBy:ordering()) track by $index">
-        <form>
-            <td class="col-xs-6 column">{{item['local_name']}}</td>
-            <td class="col-xs-3 column"><input type="text" class="text-center pull-right" ng-model="item['expect_cnt']" style="width: 40px;"></td>
-            <td class="col-xs-3 column"><div class="text-center form-control2 pull-right">{{item['fixed_cnt']}}</div></td>
-        </form>
-    </tr>
-
-    </tbody>
-    </table>
 
     <!--&lt;!&ndash; footer &ndash;&gt;-->
     <!--<div class="navbar-fixed-bottom sub-navbar footer-top">-->
