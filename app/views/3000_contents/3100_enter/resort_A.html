@@ -78,7 +78,7 @@
                     </table>
                 </div>
             </div><br>　
-            <button class="pull-right">저장</button><br>　
+            <button class="pull-right" ng-click="saveEvent()">저장</button><br>　
             <table class="table tb-list table-bordered list-option table-striped" style="margin-top:0em;">
                 <thead>
                 <tr class="list-header-option">
@@ -95,10 +95,10 @@
                 </thead>
 
                 <tbody class="text-center list-contents-option">
-                <tr ng-repeat="item in items">
+                <tr ng-repeat="item in getRoomList">
                     <td>{{item['house_name']}}</td>
                     <td>{{item['room_no']}}</td>
-                    <td ng-click="gChange(item[$index]['gender'])">{{item['gender']}}</td>
+                    <td ng-click="gChange($index)">{{item['gender']}}</td>
                 </tr>
 
                 </tbody>

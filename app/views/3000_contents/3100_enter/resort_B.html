@@ -1,46 +1,46 @@
 <link rel="stylesheet" href="styles/contents.css">
-<div class="container">
+<div class="container" ng-controller="Contents42Ctrl">
     <div class="row clearfix">
         <div class="col-xs-12 column">
             <div class="row clearfix">
-                <div class="col-xs-5 column">
-                    <div class="row clearfix">
-                        <div class="col-xs-6 column">
-                            <div class="text-box  add-group1">
-                                계약<br>
-                                객실
+                    <div class="col-xs-5 column">
+                        <div class="row clearfix">
+                            <div class="col-xs-6 column">
+                                <div class="text-box  add-group1" style="width: 4em;height: 5em">
+                                    계약<br> <br>
+                                    객실
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xs-6 column">
-                            <input class="form-control" type="text" style="width: 2em"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-7 column">
-                    <div class="row clearfix">
-                        <div class="col-xs-12 column">
-                            <div class="row clearfix">
-                                <div class="col-xs-6 column text-box add-group1">
-                                    <p>객실 배정</p>
-                                </div>
-                                <div class="col-xs-6 column">
-                                    <input class="form-control" type="text"/>
-                                </div>
+                            <div class="col-xs-6 column">
+                                <input class="form-control" type="text" readonly ng-model="totalRooms" style="width: 3em;height: 5em"/>
                             </div>
                         </div>
                     </div>
-                    <div class="row clearfix">
-                        <div class="col-xs-12 column">
-                            <div class="row clearfix">
-                                <div class="col-xs-6 column text-box add-group1">
-                                    <p>배정대기</p>
-                                </div>
-                                <div class="col-xs-6 column">
-                                    <input class="form-control" type="text"/>
+                    <div class="col-xs-7 column">
+                        <div class="row clearfix">
+                            <div class="col-xs-12 column">
+                                <div class="row clearfix">
+                                    <div class="col-xs-6 column text-box add-group1">
+                                        <p>객실 배정</p>
+                                    </div>
+                                    <div class="col-xs-6 column">
+                                        <input class="form-control" readonly ng-model="fixedRoom" type="text"/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="row clearfix">
+                            <div class="col-xs-12 column">
+                                <div class="row clearfix">
+                                    <div class="col-xs-6 column text-box add-group1">
+                                        <p>배정대기</p>
+                                    </div>
+                                    <div class="col-xs-6 column">
+                                        <input class="form-control" ng-model="yet" readonly type="text"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
             <div class="row clearfix">
@@ -53,7 +53,7 @@
                                         <div class=" text-box add-group1"><p>지방회</p></div>
                                     </div>
                                     <div class="col-xs-6 column">
-                                        <input class="form-control" type="text"/>
+                                        <input class="form-control text-center" type="text" placeholder="클릭하세요" ng-click="getLocalDt1()"/>
                                     </div>
                                 </div>
                             </div>
@@ -64,23 +64,22 @@
                                     <div class="col-xs-4 column">
                                         <div class=" text-box add-group1"><p>참가인원</p></div>
                                     </div>
-                                    <div class="col-xs-1 column">
-                                        <input class="form-control" type="text"/>
+                                    <div class="col-xs-2 column">
+                                        <input class="form-control" readonly type="text" style="width: 2em"/>
                                     </div>
-                                    <div class="col-xs-3 column">
+                                    <div class="col-xs-4 column">
                                         <div class=" text-box add-group1"><p>배정</p></div>
                                     </div>
                                     <div class="col-xs-2 column">
-                                        <input class="form-control" type="text"/>
+                                        <input class="form-control" readonly type="text" style="width: 2em"/>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="pull-right btn1 btn">저장</button>
-                　<br>　
-            </div>
+            </div><br>　
+            <button class="pull-right" onclick="alert('저장되었습니다.')">저장</button><br>　
             <table class="table tb-list table-bordered list-option table-striped" style="margin-top:0em;">
                 <thead>
                 <tr class="list-header-option">
@@ -100,15 +99,24 @@
                 </thead>
 
                 <tbody class="text-center list-contents-option">
-                <tr ng-repeat="item in (items | orderBy:ordering()) track by $index">
-                    <td>{{item['local_name']}}</td>
-                    <td>{{item['local_name']}}</td>
-                    <td>{{item['local_name']}}</td>
-                    <td>{{item['local_name']}}</td>
+                <tr ng-repeat="item in totalData">
+                    <td>{{item['house_name']}}</td>
+                    <td>{{item['room_no']}}</td>
+                    <td>{{item['local_id']}}</td>
+                    <td ng-if="item['is_alloc']!=null" ng-click="initAlloc(item['room_no'],false)">V</td>
+                    <td ng-if="item['is_alloc']==null" ng-click="initAlloc(item['room_no'],true)"></td>
                 </tr>
 
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="modal fade" id="modal-select-head" role="dialog" aria-labelledby="ChurchModal"
+         aria-hidden="true">
+        <div class="modal-frame">
+            <div class="modal-dialog modal-frame-align">
+                <div ng-include="'views/3000_contents/3100_enter/resort_locals_popup.html'"></div>
+            </div>
         </div>
     </div>
 </div>

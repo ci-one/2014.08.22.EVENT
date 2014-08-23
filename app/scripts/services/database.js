@@ -164,7 +164,119 @@ console.log(local_id+" "+expect_cnt);
             return deferred.promise;
         };
 
+        executeResults.getRoomList = function(local_id) {
+            var deferred = $q.defer();
+            $http({
+                method: 'post',
+                url: '/getRoomList',
+                data:{local_id:local_id}
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        };
 
+        executeResults.getListofAllRoom = function() {
+            var deferred = $q.defer();
+            $http({
+                method: 'post',
+                url: '/getListofAllRoom'
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        };
+
+        executeResults.allLocalList = function() {
+            var deferred = $q.defer();
+            $http({
+                method: 'post',
+                url: '/allLocalList'
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        };
+
+        executeResults.contractRoom = function(room_no,is) {
+            var deferred = $q.defer();
+            $http({
+                method: 'post',
+                url: '/contractRoom',
+                data:{room_no:room_no,is:is}
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        };
+
+        executeResults.getInfoofRoom = function(local_id) {
+            var deferred = $q.defer();
+            $http({
+                method: 'post',
+                url: '/getInfoofRoom',
+                data:{local_id:local_id}
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        };
+
+        executeResults.getLocalDataforRoom = function(local_id) {
+            var deferred = $q.defer();
+            $http({
+                method: 'post',
+                url: '/getLocalDataforRoom',
+                data:{local_id:local_id}
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        };
+
+        executeResults.setRoomData = function(room_no,gender) {
+            var deferred = $q.defer();
+            $http({
+                method: 'post',
+                url: '/setRoomData',
+                data:{room_no:room_no,gender:gender}
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        };
+
+        executeResults.roomsetting = function(room_no,is) {
+            var deferred = $q.defer();
+            $http({
+                method: 'post',
+                url: '/roomsetting',
+                data:{room_no:room_no,is:is}
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        };
+
+        executeResults.getListofRoom = function() {
+            var deferred = $q.defer();
+            $http({
+                method: 'post',
+                url: '/getListofRoom'
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        };
 
         return executeResults;
     });
