@@ -266,6 +266,31 @@ console.log(local_id+" "+expect_cnt);
             return deferred.promise;
         };
 
+        executeResults.getLocalNameTT=function(param){
+            var deferred = $q.defer();
+            $http({
+                method: 'post',
+                url: '/getLocalNameTT',
+                data:{localName:param}
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        }
+
+        executeResults.getannualNameTT=function(param){
+            var deferred = $q.defer();
+            $http({
+                method: 'post',
+                url: '/getannualNameTT',
+            }).success(function (data) {
+                    deferred.resolve(data);
+                }
+            );
+            return deferred.promise;
+        }
+
         executeResults.getListofRoom = function() {
             var deferred = $q.defer();
             $http({
@@ -280,3 +305,5 @@ console.log(local_id+" "+expect_cnt);
 
         return executeResults;
     });
+
+

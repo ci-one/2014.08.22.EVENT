@@ -9,10 +9,18 @@ angular.module('churchApp')
         // init
         $scope.inputData = {annual_id:'', annual: '', local_id:'', local: '', church_id:'', church: '', name: '', duty: '', gender: '', year: '', age: '', hp: ''};
         $scope.churchList = [];
+        $scope.localList = [];
         $scope.dutyList = ['감독', '목사', '전도사', '장로', '권사', '집사', '성도'];
         $scope.selectedChurch = '';
 
         $scope.churchInfo = null;
+
+        var getLocalList=function(){
+            executeResults.getLocalList().then(function(result) {
+                $scope.localList=result;
+            });
+        };
+
 
         // church list load
         var getChurchList = function () {
